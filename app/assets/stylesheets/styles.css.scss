@@ -1,8 +1,13 @@
+$navbar-default-border: white;
+$navbar-default-bg: white;
+$navbar-default-link-hover-color: red;
+
 @import 'bootstrap';
 
 body {
-	padding-top: 50px;
+	padding-top: 60px;
 }
+
 
 .footer {
 	margin-top: 50px;
