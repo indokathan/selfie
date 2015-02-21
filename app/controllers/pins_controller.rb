@@ -1,4 +1,5 @@
 class PinsController < ApplicationController
+  before_filter :authenticate_user!, except: [:index]
   before_filter :set_pin, only: [:show, :edit, :update, :destroy]
 
   respond_to :html
