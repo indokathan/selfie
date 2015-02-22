@@ -14,26 +14,27 @@ class PinsController < ApplicationController
   end
 
   def new
-    @pin = Pin.new
+    @pin = current_user.pins.new 
     respond_with(@pin)
   end
 
   def edit
+    @pin = current_user.pins.find(params[:id])
   end
 
   def create
-    @pin = Pin.new(params[:pin])
+    @pin = current_user.pins.new(params[:pin])
     @pin.save
     respond_with(@pin)
   end
 
   def update
-    @pin.update_attributes(params[:pin])
+    @current_user.pins.update_attributes(params[:pin])
     respond_with(@pin)
   end
 
   def destroy
-    @pin.destroy
+    @current_user.pins.destroy
     respond_with(@pin)
   end
 
